@@ -5,6 +5,13 @@
     "NODE_ENV": "production"
   },
   "regions": ["iad1"],
+  "functions": {
+    "dist/server/index.js": {
+      "maxDuration": 60,
+      "memory": 1024,
+      "runtime": "nodejs20.x"
+    }
+  },
   "headers": [
     {
       "source": "/api/:path*",
@@ -23,12 +30,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path((?!.*\\.).*)",
-      "destination": "/"
     }
   ],
   "redirects": [
