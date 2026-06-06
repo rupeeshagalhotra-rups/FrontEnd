@@ -25,6 +25,12 @@
       ]
     }
   ],
+  "rewrites": [
+    {
+      "source": "/:path((?!.*\\.).*)",
+      "destination": "/"
+    }
+  ],
   "redirects": [
     {
       "source": "/docs",
